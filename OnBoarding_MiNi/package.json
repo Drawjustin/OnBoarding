@@ -1,0 +1,31 @@
+{
+  "name": "onboarding_mini",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drawjustin/OnBoarding.git"
+  },
+  "author": "justin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drawjustin/OnBoarding/issues"
+  },
+  "homepage": "https://github.com/Drawjustin/OnBoarding#readme",
+  "description": "",
+  "dependencies": {
+    "fastify": "^4.0.0",
+    "graphql": "^16.0.0",
+    "@apollo/server": "^4.0.0",
+    "typeorm": "^0.3.0",
+    "typescript": "^5.0.0",
+    "type-graphql": "^2.0.0-beta.1",
+    "mysql2": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
