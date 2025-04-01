@@ -1,6 +1,6 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import { AppDataSource } from "../../utils/db/dataSource";
-import { User } from "../../entities/User";
+import { User } from "./entities/User";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 

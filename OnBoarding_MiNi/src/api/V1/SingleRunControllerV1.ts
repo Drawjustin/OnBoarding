@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import { AppDataSource } from "../../utils/db/dataSource";
-import { User } from "../../entities/User";
-import { SingleRun } from "../../entities/SingleRun";
+import { User } from "./entities/User";
+import { SingleRun } from "./entities/SingleRun";
 
 // Fastify 플러그인 형태로 라우트 정의
 export default async function runningRoutes(fastify: FastifyInstance) {
