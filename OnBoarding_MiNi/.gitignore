@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,webstorm
 
 node_modules/
-
+.env
 ### macOS ###
 # General
 .DS_Store
