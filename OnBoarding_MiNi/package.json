@@ -29,7 +29,8 @@
     "bcrypt": "^5.0.2",
     "@types/bcrypt": "^5.0.2",
     "jsonwebtoken": "^9.0.2",
-    "@types/jsonwebtoken": "^9.0.9"
+    "@types/jsonwebtoken": "^9.0.9",
+    "@as-integrations/fastify": "^2.1.1"
   },
   "engines": {
     "node": ">=20.0.0"

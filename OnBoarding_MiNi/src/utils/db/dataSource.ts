@@ -1,7 +1,9 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "../../api/V1/entities/User";
-import { SingleRun } from "../../api/V1/entities/SingleRun";
+// import { User } from "../../api/V1/entities/User";
+// import { SingleRun } from "../../api/V1/entities/SingleRun";
+import { User } from "../../api/V2/entities/User";
+import { SingleRun } from "../../api/V2/entities/SingleRun";
 // 기타 필요한 엔티티들...
 
 export const AppDataSource = new DataSource({

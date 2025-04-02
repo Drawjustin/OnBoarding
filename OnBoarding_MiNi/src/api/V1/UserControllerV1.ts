@@ -7,8 +7,12 @@ import jwt from "jsonwebtoken";
 // Fastify 플러그인 형태로 라우트 정의
 export default async function userRoutes(fastify: FastifyInstance) {
     // 기본 경로
-    fastify.get("/", async (request, reply) => {
-        return { message: "User API" };
+    fastify.get("/:userId", async (request: FastifyRequest<{
+        Params: { userId: string }
+    }>, reply: FastifyReply) => {
+        const userRepository = AppDataSource.getRepository(User);
+        const userId = parseInt(request.params.userId);
+        return userRepository.findOneBy({id : userId});
     });
 
     // 회원가입 라우트

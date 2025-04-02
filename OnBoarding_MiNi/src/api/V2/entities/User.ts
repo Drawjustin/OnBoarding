@@ -8,12 +8,15 @@ export class User extends BaseEntity {
     @Column({ type: "varchar", length: 100 })
     name!: string;
 
-    @Column({ type: "varchar", unique: true })
+    @Column({ type: "varchar"})
     email!: string;
 
     @Column({ type: "varchar", length: 100 })
     password!: string;
 
-    @Column({ type: "boolean",default: false })
+    @Column({ type: "boolean", default: false })
     isAdmin!: boolean;
+
+    @Column({ type: "varchar", length: 200, default: ""})
+    refreshToken!: string;
 }

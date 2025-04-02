@@ -1,42 +1,49 @@
-// // server.ts - Fastify와 Apollo Server 통합
-// import Fastify from 'fastify';
-// import { ApolloServer } from '@apollo/server';
-// import { fastifyApolloDrainPlugin, fastifyApolloHandler } from '@as-integrations/fastify';
-// import { typeDefs } from './schema/schema';  // typeDefs 임포트
-// import { resolvers } from './resolver/resolver';  // resolvers 임포트
-// // import { createContext } from './context';  // context 함수 임포트
-//
-// // Fastify 인스턴스 생성
-// const fastify = Fastify();
-//
-// // Apollo Server 인스턴스 생성
-// const apolloServer = new ApolloServer({
-//     typeDefs,  // 임포트한 typeDefs 사용
-//     resolvers, // 임포트한 resolvers 사용
-//     plugins: [fastifyApolloDrainPlugin(fastify)]
-// });
-//
-// // 서버 시작 함수
-// const startServer = async () => {
-//     await apolloServer.start();
-//
-//     // GraphQL 엔드포인트 등록
-//     fastify.route({
-//         url: '/graphql',
-//         method: ['GET', 'POST'],
-//         handler: fastifyApolloHandler(apolloServer, {
-//             context: async (request) => createContext({ req: request.raw })
-//         })
-//     });
-//
-//     try {
-//         // Fastify 서버 시작
-//         const address = await fastify.listen({ port: 4000, host: '0.0.0.0' });
-//         console.log(`🚀 서버 실행 중: ${address}/graphql`);
-//     } catch (err) {
-//         fastify.log.error(err);
-//         process.exit(1);
-//     }
-// };
-//
-// startServer();
+// server.ts
+import Fastify from 'fastify';
+import { buildSchema } from 'type-graphql';
+import { ApolloServer } from '@apollo/server';
+import { fastifyApolloDrainPlugin, fastifyApolloHandler } from '@as-integrations/fastify';
+import { UserResolver } from './graphql/resolver/resolver';
+import {AppDataSource} from "../../utils/db/dataSource";
+
+const appV2 = Fastify({ logger: true });
+
+AppDataSource.initialize()
+    .then(() => {
+        appV2.log.info("데이터베이스 연결 성공");
+    })
+    .catch((error) => {
+        appV2.log.error("데이터베이스 연결 중 오류 발생:", error);
+    });
+
+const startServer = async () => {
+    const schema = await buildSchema({
+        resolvers: [UserResolver],
+    });
+
+    const apolloServer = new ApolloServer({
+        schema,
+        plugins: [fastifyApolloDrainPlugin(appV2)]
+    });
+
+    await apolloServer.start();
+
+    appV2.route({
+        url: '/graphql',
+        method: ['GET', 'POST'],
+        handler: fastifyApolloHandler(apolloServer, {
+            // context 부분 제거 또는 간단한 객체 사용
+            context: async (request) => ({ req: request.raw })
+        })
+    });
+
+    try {
+        const address = await appV2.listen({ port: 4000, host: '0.0.0.0' });
+        console.log(`🚀 서버 실행 중: ${address}/graphql`);
+    } catch (err) {
+        appV2.log.error(err);
+        process.exit(1);
+    }
+};
+
+startServer();

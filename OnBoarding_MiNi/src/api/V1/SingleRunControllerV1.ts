@@ -102,7 +102,7 @@ export default async function runningRoutes(fastify: FastifyInstance) {
         try {
             const { userId, totalDistance, totalTime, averagePace, averageHeart } = request.body;
 
-            if (!userId || !totalDistance || !totalTime || !averagePace) {
+            if (!(userId && totalDistance && totalTime && averagePace)){
                 return reply.code(400).send({ message: "필수 필드가 누락되었습니다." });
             }
 
