@@ -8,6 +8,7 @@
       <change afterPath="$PROJECT_DIR$/src/api/V2/entities/SingleRun.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/api/V2/entities/User.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/api/V2/entities/baseEntity/base-entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/resolver/resolver.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/schema/userSchema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
@@ -16,7 +17,7 @@
       <change beforePath="$PROJECT_DIR$/src/api/V1/UserControllerV1.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V1/UserControllerV1.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/V1/entities/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V1/entities/User.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/V2/appV2.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/appV2.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V2/resolver/resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/graphql/resolver/resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/resolver/resolver.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/V2/schema/schema.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/db/dataSource.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/db/dataSource.ts" afterDir="false" />
     </list>
@@ -105,7 +106,7 @@
       <workItem from="1743474288520" duration="1178000" />
       <workItem from="1743475848015" duration="1908000" />
       <workItem from="1743480840324" duration="14683000" />
-      <workItem from="1743552085530" duration="10199000" />
+      <workItem from="1743552085530" duration="10504000" />
     </task>
     <servers />
   </component>
