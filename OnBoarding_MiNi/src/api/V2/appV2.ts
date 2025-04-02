@@ -3,7 +3,8 @@ import Fastify from 'fastify';
 import { buildSchema } from 'type-graphql';
 import { ApolloServer } from '@apollo/server';
 import { fastifyApolloDrainPlugin, fastifyApolloHandler } from '@as-integrations/fastify';
-import { UserResolver } from './graphql/resolver/resolver';
+import { UserResolver } from './graphql/resolver/userResolver';
+import { SingleRunResolver } from './graphql/resolver/singleRunResolver';
 import {AppDataSource} from "../../utils/db/dataSource";
 
 const appV2 = Fastify({ logger: true });
@@ -16,9 +17,10 @@ AppDataSource.initialize()
         appV2.log.error("데이터베이스 연결 중 오류 발생:", error);
     });
 
+
 const startServer = async () => {
     const schema = await buildSchema({
-        resolvers: [UserResolver],
+        resolvers: [UserResolver,SingleRunResolver],
     });
 
     const apolloServer = new ApolloServer({

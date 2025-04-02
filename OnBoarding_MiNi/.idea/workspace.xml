@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e93bd44-46e3-433c-82da-7b58f4a0eed4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/V2/entities/SingleRun.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/V2/entities/User.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/V2/entities/baseEntity/base-entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/resolver/resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/schema/userSchema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/resolver/singleRunResolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/schema/SingleRunSchema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/schema/baseSchema/baseRequestSchema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/V2/graphql/schema/baseSchema/baseResponseSchema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V1/SingleRunControllerV1.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V1/SingleRunControllerV1.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V1/UserControllerV1.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V1/UserControllerV1.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V1/entities/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V1/entities/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/SingleRunControllerV2.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/UserControllerV2.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/V2/appV2.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/appV2.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V2/resolver/resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V2/schema/schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/db/dataSource.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/db/dataSource.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/entities/SingleRun.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/entities/SingleRun.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/entities/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/entities/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/entities/baseEntity/base-entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/entities/baseEntity/base-entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/graphql/resolver/resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/graphql/resolver/userResolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/V2/graphql/schema/userSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/graphql/schema/userSchema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +66,7 @@
       <recent name="$PROJECT_DIR$/src/example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/api/V2/graphql/schema/baseSchema" />
       <recent name="$PROJECT_DIR$/src/api/V2/graphql" />
       <recent name="$PROJECT_DIR$/src/api/V1" />
       <recent name="$PROJECT_DIR$/src/example/exampleV1" />
@@ -106,7 +105,7 @@
       <workItem from="1743474288520" duration="1178000" />
       <workItem from="1743475848015" duration="1908000" />
       <workItem from="1743480840324" duration="14683000" />
-      <workItem from="1743552085530" duration="10504000" />
+      <workItem from="1743552085530" duration="25167000" />
     </task>
     <servers />
   </component>

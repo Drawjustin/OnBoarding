@@ -2,34 +2,34 @@ import {ObjectType, Field, ID, InputType} from 'type-graphql'
 @ObjectType() // type User { ...
 export class UserResponse {
     @Field(type => ID)
-    id?: number
+    id!: number
 
     @Field(type => String)
-    name?: string
+    name!: string
 
     @Field(type => String)
-    email?: string
+    email!: string
 
     @Field(type => Boolean)
-    isAdmin?: boolean
+    isAdmin!: boolean
 
     @Field(type=> String)
-    refreshToken?: string;
+    refreshToken!: string;
 }
 
 
 
 @InputType()// type User { ...
 export class UserRequest {
-    @Field(() => String, { nullable: true })
-    name?: string
+    @Field(() => String)
+    name!: string
 
     @Field(type => String)
-    email?: string
+    email!: string
 
     @Field(type => String)
-    password?: string
+    password!: string
 
-    @Field(() => Boolean, { nullable: true })
-    isAdmin?: boolean
+    @Field(() => Boolean, {defaultValue: false})
+    isAdmin!: boolean
 }

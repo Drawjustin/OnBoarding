@@ -6,20 +6,20 @@ export class SingleRun extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ type: "int", default: 0 })
+    @Column({ type: "double" })
     totalDistance!: number;
 
-    @Column({ type: "int", default: 0 })
+    @Column({ type: "double" })
     totalTime!: number;
 
-    @Column({ type: "int", default: 0 })
+    @Column({ type: "double" })
     averagePace!: number;
 
-    @Column({ type: "int", default: 0 })
+    @Column({ type: "double" })
     averageHeart!: number;
 
     @ManyToOne(() => User)
+    @JoinColumn({ name: 'userId' }) // 외래 키 컬럼 이름 명시적 지정
     user!: User;
-
 
 }

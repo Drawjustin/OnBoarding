@@ -1,5 +1,6 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
 import { BaseEntity } from './baseEntity/base-entity';
+import {SingleRun} from "./SingleRun";
 @Entity()
 export class User extends BaseEntity {
     @PrimaryGeneratedColumn()
@@ -19,4 +20,8 @@ export class User extends BaseEntity {
 
     @Column({ type: "varchar", length: 200, default: ""})
     refreshToken!: string;
+
+    @OneToMany(() => SingleRun, singleRun => singleRun.user)
+    singleRuns!: SingleRun[];
+
 }
