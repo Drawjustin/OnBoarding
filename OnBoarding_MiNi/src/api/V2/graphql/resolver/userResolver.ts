@@ -10,7 +10,7 @@ const userRepository = AppDataSource.getRepository(User);
 
 @Resolver(UserResponse)
 export class UserResolver {
-    @Query(returns => UserResponse, { nullable: true })
+    @Query(returns => UserResponse)
     async get_user(
         @Arg('id', type => Int) id: number
     ): Promise<UserResponse|null> {
@@ -20,7 +20,7 @@ export class UserResolver {
         });
     }
 
-    @Mutation(returns => UserResponse, {nullable: true})
+    @Mutation(returns => UserResponse)
     async add_user(
         @Arg('input', () => UserRequest) userInput: UserRequest
     ): Promise<UserResponse|null> {
@@ -64,7 +64,7 @@ export class UserResolver {
 
 
 
-    @Mutation(returns => UserResponse, { nullable: true })
+    @Mutation(returns => UserResponse)
     async login_user(
         @Arg('input', () => UserRequest) userInput: UserRequest
     ): Promise<UserResponse | null> {

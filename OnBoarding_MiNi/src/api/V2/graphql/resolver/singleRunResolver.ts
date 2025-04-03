@@ -1,4 +1,4 @@
-import {Arg, ID, Mutation, Query, Resolver} from "type-graphql";
+import {Arg, ID, Int, Mutation, Query, Resolver} from "type-graphql";
 import {AppDataSource} from "../../../../utils/db/dataSource";
 import {SingleRun} from "../../entities/SingleRun";
 import {User} from "../../entities/User";
@@ -21,29 +21,30 @@ export class SingleRunResolver {
 
 
 
-    @Query(returns => [SingleRunResponse], { nullable: true })
+    @Query(returns => [SingleRunResponse])
     async get_SingleRunAllByUser(
-        @Arg('userId', type => ID) userId: number
+        @Arg('userId', type => Int) userId: string
     ): Promise<SingleRun[]> {
 
         return await singleRunRepository.find({
-            where: {user: {id: userId}},
+            where: {user: {id: Number(userId)}},
             relations: ['user']
         });
     }
 
-    @Query(returns => SingleRunResponse, { nullable: true })
+    @Query(returns => SingleRunResponse)
     async get_SingleRun(
-        @Arg('id', type => ID) id: number
+        @Arg('id', type => Int) id: number
     ): Promise<SingleRun|null> {
-        return await singleRunRepository.findOne({
-            where: {id: id},
-            relations: ['user']
-        });
+
+    return await singleRunRepository.createQueryBuilder("singleRun")
+        .innerJoinAndSelect('singleRun.user', 'user')
+        .where('singleRun.id = :id', {id})
+        .getOne();
     }
 
 
-    @Mutation(returns => SingleRunResponse, {nullable: true})
+    @Mutation(returns => SingleRunResponse)
     async add_SingleRun(
         @Arg('input', () => SingleRunRequest) SingleRunInput: SingleRunRequest
     ): Promise<SingleRunResponse|null> {
@@ -79,9 +80,9 @@ export class SingleRunResolver {
     }
 
 
-    @Mutation(returns => SingleRunResponse, {nullable: true})
+    @Mutation(returns => SingleRunResponse)
     async delete_SingleRun(
-        @Arg('id', () => ID) id: number
+        @Arg('id', () => Int) id: number
     ): Promise<SingleRunResponse|null> {
         try {
 

@@ -19,7 +19,9 @@ export class SingleRun extends BaseEntity {
     averageHeart!: number;
 
     @ManyToOne(() => User)
-    @JoinColumn({ name: 'userId' }) // 외래 키 컬럼 이름 명시적 지정
+    @JoinColumn({ name: 'userId' }) // 외래
     user!: User;
 
+    @Column({ type: "double" })
+    userId!: number;
 }
