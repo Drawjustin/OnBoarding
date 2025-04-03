@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e93bd44-46e3-433c-82da-7b58f4a0eed4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V2/entities/SingleRun.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/entities/SingleRun.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/V2/graphql/resolver/singleRunResolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/graphql/resolver/singleRunResolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/V2/graphql/resolver/userResolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/V2/graphql/resolver/userResolver.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,7 @@
       <workItem from="1743475848015" duration="1908000" />
       <workItem from="1743480840324" duration="14683000" />
       <workItem from="1743552085530" duration="27100000" />
-      <workItem from="1743637452348" duration="2724000" />
+      <workItem from="1743637452348" duration="3360000" />
     </task>
     <servers />
   </component>

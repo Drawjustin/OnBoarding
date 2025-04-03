@@ -23,7 +23,7 @@ export class SingleRunResolver {
 
     @Query(returns => [SingleRunResponse])
     async get_SingleRunAllByUser(
-        @Arg('userId', type => Int) userId: string
+        @Arg('userId', type => Int) userId: number
     ): Promise<SingleRun[]> {
 
         return await singleRunRepository.find({
@@ -78,7 +78,6 @@ export class SingleRunResolver {
             return null;
         }
     }
-
 
     @Mutation(returns => SingleRunResponse)
     async delete_SingleRun(
